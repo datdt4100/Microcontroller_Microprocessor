@@ -1,0 +1,47 @@
+14:00:51 **** Incremental Build of configuration Debug for project DFA_Demo ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/input_processing.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/input_processing.d" -MT"Core/Src/input_processing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/input_processing.o"
+arm-none-eabi-gcc "../Core/Src/input_reading.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/input_reading.d" -MT"Core/Src/input_reading.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/input_reading.o"
+../Core/Src/input_reading.c: In function 'button_reading':
+../Core/Src/input_reading.c:17:25: warning: array subscript has type 'char' [-Wchar-subscripts]
+   17 |   debounceButtonBuffer2 [i] = debounceButtonBuffer1 [i];
+      |                         ^
+../Core/Src/input_reading.c:17:53: warning: array subscript has type 'char' [-Wchar-subscripts]
+   17 |   debounceButtonBuffer2 [i] = debounceButtonBuffer1 [i];
+      |                                                     ^
+../Core/Src/input_reading.c:18:25: warning: array subscript has type 'char' [-Wchar-subscripts]
+   18 |   debounceButtonBuffer1 [i] = HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_2 << i);
+      |                         ^
+../Core/Src/input_reading.c:19:29: warning: array subscript has type 'char' [-Wchar-subscripts]
+   19 |   if( debounceButtonBuffer1 [i] == debounceButtonBuffer2 [i])
+      |                             ^
+../Core/Src/input_reading.c:19:58: warning: array subscript has type 'char' [-Wchar-subscripts]
+   19 |   if( debounceButtonBuffer1 [i] == debounceButtonBuffer2 [i])
+      |                                                          ^
+../Core/Src/input_processing.c: In function 'FSM_Btn':
+../Core/Src/input_processing.c:21:7: warning: implicit declaration of function 'is_pressed' [-Wimplicit-function-declaration]
+   21 |   if (is_pressed(1))
+      |       ^~~~~~~~~~
+../Core/Src/input_reading.c:20:17: warning: array subscript has type 'char' [-Wchar-subscripts]
+   20 |    buttonBuffer [i] = debounceButtonBuffer1 [i];
+      |                 ^
+../Core/Src/input_reading.c:20:45: warning: array subscript has type 'char' [-Wchar-subscripts]
+   20 |    buttonBuffer [i] = debounceButtonBuffer1 [i];
+      |                                             ^
+arm-none-eabi-gcc -o "DFA_Demo.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Microprocessor_and_Microcontroller\Microcontroller_Microprocessor\Lab\FSM_Demo\DFA_Demo\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DFA_Demo.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DFA_Demo.elf
+ 
+arm-none-eabi-size   DFA_Demo.elf 
+arm-none-eabi-objdump -h -S  DFA_Demo.elf  > "DFA_Demo.list"
+arm-none-eabi-objcopy  -O ihex  DFA_Demo.elf  "DFA_Demo.hex"
+arm-none-eabi-objcopy  -O binary  DFA_Demo.elf  "DFA_Demo.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7540	     20	   1668	   9228	   240c	DFA_Demo.elf
+Finished building: default.size.stdout
+ 
+Finished building: DFA_Demo.bin
+Finished building: DFA_Demo.hex
+Finished building: DFA_Demo.list
+ 
+ 
+ 

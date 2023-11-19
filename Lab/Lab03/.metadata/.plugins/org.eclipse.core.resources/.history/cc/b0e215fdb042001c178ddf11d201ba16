@@ -1,0 +1,19 @@
+/*
+ * input_processing.h
+ *
+ *  Created on: Nov 2, 2021
+ *      Author: TRAN DAT
+ */
+
+#ifndef INC_INPUT_PROCESSING_H_
+#define INC_INPUT_PROCESSING_H_
+
+#include "input_reading.h"
+#include "timer.h"
+#include "traffic_light_sys.h"
+
+#define RED_TIME_MAX	99
+#define YELLOW_TIME_MAX	5
+
+void fsm_input_button();
+#endif /* INC_INPUT_PROCESSING_H_ */

@@ -1,0 +1,2 @@
+input_processing.c:11:6:SystemState_Init	8	static
+input_processing.c:19:6:fsm_input_button	8	static

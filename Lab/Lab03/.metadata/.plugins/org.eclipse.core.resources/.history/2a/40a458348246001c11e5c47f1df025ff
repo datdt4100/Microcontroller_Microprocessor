@@ -1,0 +1,28 @@
+/*
+ * queue.c
+ *
+ *  Created on: 2 Nov 2021
+ *      Author: TRAN DAT
+ */
+
+#include "task.h"
+
+uint8_t isEmpty()
+{
+	return (taskSize == 0);
+}
+struct task_t createTask(uint32_t TID = 0, uint32_t Period = 0, uint32_t Delay = 0, uint8_t Priority = 0, uint8_t RunMe = 0, void(*pTask)() = NULL)
+{
+	task_t newTask;
+	newTask.Priority = Priority;
+	newTask.Delay = Delay;
+	newTask.Period = Period;
+	newTask.RunMe = RunMe;
+	newTask.TID = TID;
+	newTask.pTask = pTask;
+}
+void addTask(task_t *pTask)
+{
+
+}
+

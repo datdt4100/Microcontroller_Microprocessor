@@ -1,0 +1,7 @@
+11:55:34 **** Incremental Build of configuration Debug for project SquareWave ****
+make -j8 all 
+arm-none-eabi-size   SquareWave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7276	     20	   1716	   9012	   2334	SquareWave.elf
+Finished building: default.size.stdout
+ 

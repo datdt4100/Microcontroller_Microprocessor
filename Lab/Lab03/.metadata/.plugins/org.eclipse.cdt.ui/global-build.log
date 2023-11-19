@@ -1,0 +1,21 @@
+06:09:19 **** Incremental Build of configuration Debug for project FSM_Btn ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/traffic_light_sys.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/traffic_light_sys.d" -MT"Core/Src/traffic_light_sys.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/traffic_light_sys.o"
+arm-none-eabi-gcc -o "FSM_Btn.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Microprocessor_and_Microcontroller\Microcontroller_Microprocessor\Lab\Lab03\FSM_Btn\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FSM_Btn.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FSM_Btn.elf
+ 
+arm-none-eabi-size   FSM_Btn.elf 
+arm-none-eabi-objdump -h -S  FSM_Btn.elf  > "FSM_Btn.list"
+arm-none-eabi-objcopy  -O ihex  FSM_Btn.elf  "FSM_Btn.hex"
+arm-none-eabi-objcopy  -O binary  FSM_Btn.elf  "FSM_Btn.bin"
+   text	   data	    bss	    dec	    hex	filename
+   9608	     52	   1684	  11344	   2c50	FSM_Btn.elf
+Finished building: default.size.stdout
+ 
+Finished building: FSM_Btn.hex
+ 
+Finished building: FSM_Btn.bin
+ 
+Finished building: FSM_Btn.list
+ 

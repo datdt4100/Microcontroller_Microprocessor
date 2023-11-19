@@ -1,0 +1,5 @@
+traffic_light_sys.c:38:6:Traffic_Init	8	static
+traffic_light_sys.c:51:6:traffic_update	16	static
+traffic_light_sys.c:88:6:Led7SegBuffer_update	4	static
+traffic_light_sys.c:97:6:Led7Seg_update	16	static
+traffic_light_sys.c:106:6:fsm_input_button	8	static

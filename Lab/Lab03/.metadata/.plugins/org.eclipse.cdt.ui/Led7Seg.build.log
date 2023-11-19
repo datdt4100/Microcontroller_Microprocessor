@@ -1,0 +1,27 @@
+02:20:56 **** Build of configuration Debug for project Led7Seg ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:7: warning: unused variable 'animation' [-Wunused-variable]
+  154 |   int animation = 0;
+      |       ^~~~~~~~~
+arm-none-eabi-gcc -o "Led7Seg.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Microprocessor_and_Microcontroller\Microcontroller_Microprocessor\Lab\Lab02\Led7Seg\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Led7Seg.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Led7Seg.elf
+ 
+arm-none-eabi-size   Led7Seg.elf 
+arm-none-eabi-objdump -h -S  Led7Seg.elf  > "Led7Seg.list"
+arm-none-eabi-objcopy  -O ihex  Led7Seg.elf  "Led7Seg.hex"
+arm-none-eabi-objcopy  -O binary  Led7Seg.elf  "Led7Seg.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7932	     36	   1684	   9652	   25b4	Led7Seg.elf
+Finished building: default.size.stdout
+ 
+Finished building: Led7Seg.bin
+Finished building: Led7Seg.hex
+ 
+ 
+Finished building: Led7Seg.list
+ 
+
+02:20:59 Build Finished. 0 errors, 1 warnings. (took 2s.874ms)
+

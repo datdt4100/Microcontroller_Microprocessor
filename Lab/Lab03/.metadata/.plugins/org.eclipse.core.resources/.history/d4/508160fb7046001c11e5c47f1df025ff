@@ -1,0 +1,72 @@
+/*
+ * queue.c
+ *
+ *  Created on: 2 Nov 2021
+ *      Author: TRAN DAT
+ */
+
+#include "task.h"
+
+uint8_t isEmpty()
+{
+	return (taskSize == 0);
+}
+struct task_t *createTask(uint32_t TID = 0, uint32_t Period = 0, uint32_t Delay = 0, uint8_t Priority = 0, uint8_t RunMe = 0, void(*pTask)() = NULL)
+{
+	struct task_t *newTask = (struct task_t*)malloc(sizeof(task_t));
+	newTask->Priority = Priority;
+	newTask->Delay = Delay;
+	newTask->Period = Period;
+	newTask->RunMe = RunMe;
+	newTask->TID = TID;
+	newTask->pTask = pTask;
+	newTask->next = NULL;
+}
+void addTask(task_t *pTask)
+{
+	if (pTask->Delay <= taskList->Delay)
+	{
+		pTask->next = taskList;
+		taskList->Delay -= pTask->Delay;
+		taskList = pTask;
+	}
+	else
+	{
+		task_t* tmp = taskList;
+		int waitTime = tmp->Delay;
+		while (tmp->next != NULL)
+		{
+			if (tmp->next->Delay + waitTime > pTask->Delay || tmp->next->next ==  NULL)
+			{
+				if (tmp->next->Delay + waitTime <= pTask->Delay)
+				{
+					waitTime += tmp->next->Delay;
+					tmp = tmp->next;
+				}
+				else
+				{
+					tmp->next->Delay -= pTask->Delay;
+					tmp->next = pTask;
+				}
+				pTask->next = tmp->next;
+				pTask->Delay -= waitTime;
+				break;
+			}
+			else
+			{
+				waitTime += tmp->next->Delay;
+				tmp = tmp->next;
+			}
+		}
+	}
+}
+
+struct task_t *popTask()
+{
+	if (isEmpty()) return NULL;
+	taskSize--;
+	struct task_t *currTask = task[taskSize];
+	task[taskSize] = NULL;
+	return currTask;
+}
+

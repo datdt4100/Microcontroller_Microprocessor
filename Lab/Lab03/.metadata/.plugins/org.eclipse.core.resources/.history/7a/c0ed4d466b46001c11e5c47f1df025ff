@@ -1,0 +1,26 @@
+/*
+ * common.h
+ *
+ *  Created on: 2 Nov 2021
+ *      Author: TRAN DAT
+ */
+
+#ifndef INC_COMMON_H_
+#define INC_COMMON_H_
+#include "main.h"
+struct task_t
+{
+	uint32_t TID;
+	uint32_t Period;
+	uint32_t Delay;
+	uint8_t Priority;
+
+	int8_t SameDelay;
+
+	uint8_t RunMe;
+	void (* pTask)();
+
+	struct task_t* next;
+};
+
+#endif /* INC_COMMON_H_ */

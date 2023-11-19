@@ -1,0 +1,9 @@
+Time_LEDMatrix.c:11:6:display7SEG	48	static
+Time_LEDMatrix.c:18:6:updateClockBuffer	4	static
+Time_LEDMatrix.c:26:6:update7SEG	16	static
+Time_LEDMatrix.c:63:6:updateLEDMatrix	16	static
+Time_LEDMatrix.c:142:6:setTimer0	16	static
+Time_LEDMatrix.c:148:6:setTimer1	16	static
+Time_LEDMatrix.c:154:6:setTimer2	16	static
+Time_LEDMatrix.c:160:6:setTimer3	16	static
+Time_LEDMatrix.c:166:6:timer_run	4	static

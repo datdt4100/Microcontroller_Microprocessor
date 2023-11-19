@@ -1,0 +1,20 @@
+/*
+ * scheduler.c
+ *
+ *  Created on: 2 Nov 2021
+ *      Author: TRAN DAT
+ */
+
+#include "scheduler.h"
+
+void SCH_Init()
+{
+	taskList = NULL;
+}
+
+void SCH_Add_Task(void (*func)(), uint32_t Delay, uint32_t Period)
+{
+	if (taskSize == MAX_TASK_SIZE) return;
+	taskSize++;
+	addTask(createTask(taskSize, Period, Delay, 1, 0, func));
+}

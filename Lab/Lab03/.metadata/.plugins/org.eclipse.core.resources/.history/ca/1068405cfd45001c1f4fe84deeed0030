@@ -1,0 +1,20 @@
+/*
+ * timer.h
+ *
+ *  Created on: Nov 2, 2021
+ *      Author: TRAN DAT
+ */
+
+#ifndef INC_TIMER_H_
+#define INC_TIMER_H_
+#include "main.h"
+#include "input_reading.h"
+
+static uint8_t timer7SegLED_flag = 0;
+static uint8_t timerTrafficLED_flag = 0;
+
+void setTimer7SegLED(int);
+void setTimerTrafficLED(int);
+void timer_run();
+
+#endif /* INC_TIMER_H_ */

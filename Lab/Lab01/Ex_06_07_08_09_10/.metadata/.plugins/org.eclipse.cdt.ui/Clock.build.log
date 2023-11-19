@@ -1,0 +1,23 @@
+05:34:00 **** Incremental Build of configuration Debug for project Clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Clock.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Microprocessor_and_Microcontroller\Lab\Lab01\Ex_06_07_08_09_10\Clock\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Clock.elf
+ 
+arm-none-eabi-size   Clock.elf 
+arm-none-eabi-objdump -h -S  Clock.elf  > "Clock.list"
+arm-none-eabi-objcopy  -O ihex  Clock.elf  "Clock.hex"
+arm-none-eabi-objcopy  -O binary  Clock.elf  "Clock.bin"
+   text	   data	    bss	    dec	    hex	filename
+   4832	     20	   1572	   6424	   1918	Clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: Clock.bin
+Finished building: Clock.hex
+ 
+Finished building: Clock.list
+ 
+ 
+
+05:34:01 Build Finished. 0 errors, 0 warnings. (took 950ms)
+

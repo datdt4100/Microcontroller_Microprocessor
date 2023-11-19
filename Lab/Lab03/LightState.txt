@@ -1,0 +1,4 @@
+ROAD 1:
+RED -> GREEN -> AMBER ->RED
+
+GREEN -> AMBER -> RED -> GREEN

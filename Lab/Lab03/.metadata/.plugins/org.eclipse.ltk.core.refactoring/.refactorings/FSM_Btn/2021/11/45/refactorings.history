@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FSM_Btn/Core/Src/input_processing&apos; to &apos;input_processing.c&apos;" description="Rename resource &apos;input_processing&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/input_processing" name="input_processing.c" stamp="1635809603500" updateReferences="true"/>
+</session>

@@ -1,0 +1,21 @@
+!SESSION 2021-11-02 11:05:34.931 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-02 11:06:21.371
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-02 11:06:21.429
+!MESSAGE Log4j initialized with config file E:\Microprocessor_and_Microcontroller\Microcontroller_Microprocessor\Lab\FSM_Demo\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-02 11:06:33.276
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-02 11:07:23.768
+!MESSAGE Indexed 'DFA_Demo' (19 sources, 78 headers) in 2.59 sec: 3,647 declarations; 13,057 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-02 11:40:46.053
+!MESSAGE Indexed 'Led7Seg' (19 sources, 97 headers) in 3.33 sec: 7,482 declarations; 36,011 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)

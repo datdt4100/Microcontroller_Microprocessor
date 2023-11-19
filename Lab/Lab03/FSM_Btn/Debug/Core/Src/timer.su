@@ -1,0 +1,7 @@
+timer.c:19:6:setTimer7SegLED	16	static
+timer.c:25:6:setTimerTrafficLED	16	static
+timer.c:31:6:setTimerLedBlinking	16	static
+timer.c:37:6:timer_run	4	static
+timer.c:64:9:timer7SegLED_FLAG	4	static
+timer.c:68:9:timerTrafficLED_FLAG	4	static
+timer.c:72:9:timerLedBlinking_FLAG	4	static

@@ -1,0 +1,48 @@
+/*
+ * timer.c
+ *
+ *  Created on: Nov 2, 2021
+ *      Author: TRAN DAT
+ */
+#include "main.h"
+#include "input_reading.h"
+
+static uint8_t timer7SegLED_flag = 0;
+static uint8_t timerTrafficLED_flag = 0;
+
+int timer7SegLED_counter = 0;
+int timerTrafficLED_counter = 0;
+
+
+uint8_t TIMER_CYCLE = 10;
+
+void setTimer7SegLED(int duration)
+{
+	timer7SegLED_counter = duration/TIMER_CYCLE;
+	timer7SegLED_flag = 0;
+}
+
+void setTimerTrafficLED(int duration)
+{
+	timerTrafficLED_counter = duration/TIMER_CYCLE;
+	timerTrafficLED_flag = 0;
+}
+
+void timer_run()
+{
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
+	if (timer7SegLED_counter > 0)
+	{
+		timer7SegLED_counter--;
+		if (timer7SegLED_counter == 0)
+			timer7SegLED_flag = 1;
+	}
+
+	if (timerTrafficLED_counter > 0)
+	{
+		timerTrafficLED_counter--;
+		if (timerTrafficLED_counter <= 0){
+			timerTrafficLED_flag = 1;
+		}
+	}
+}

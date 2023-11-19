@@ -1,0 +1,45 @@
+/*
+ * input_processing.c
+ *
+ *  Created on: 28 Oct 2021
+ *      Author: TRAN DAT
+ */
+#include "input_processing.h"
+
+int idxLED = 0;
+
+void SystemState_Init()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5
+	                          |GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_SET);
+	MODE = NORMAL;
+	Traffic_Init();
+}
+
+void fsm_input_button()
+{
+	switch (MODE)
+	{
+	case NORMAL:
+		if (timerTrafficLED_FLAG() == 1)
+		{
+			traffic_update();
+			Led7SegBuffer_update();
+			setTimerTrafficLED(1000);
+		}
+		if (timer7SegLED_FLAG() == 1)
+		{
+			Led7Seg_update(idxLED);
+			idxLED = 1 - idxLED;
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_10);
+			HAL_Delay(500);
+			setTimer7SegLED(500);
+		}
+		break;
+	case MODIFY_LED_RED:
+		break;
+	case MODIFY_LED_YELLOW:
+		break;
+	}
+}
+
